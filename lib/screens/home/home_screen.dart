@@ -105,288 +105,325 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.1,
+      body: Column(
+        children: [
+          Expanded(
+            child: SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.85,
               width: MediaQuery.sizeOf(context).width,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-                  ActivityWidget(
-                    title: "Channel",
-                    icon: Icons.widgets_outlined,
-                    count: 2,
-                  ),
-                  ActivityWidget(
-                    title: "Thread",
-                    icon: Icons.bubble_chart_sharp,
-                    count: 2,
-                  ),
-                  ActivityWidget(
-                    title: "Calls",
-                    icon: Icons.phone_callback_rounded,
-                    count: 2,
-                    isCall: true,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 20),
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.2,
-              width: MediaQuery.sizeOf(context).width,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.45,
-                    child: DashedBorderContainer(
-                      borderRadius: 16,
-                      color: AppConstant.blueColor,
-                      strokeWidth: 2,
-                      child: ColoredBox(
-                        color: AppConstant.lightBlueColor!.withValues(
-                          alpha: 0.2,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.1,
+                        width: MediaQuery.sizeOf(context).width,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          children: [
+                            ActivityWidget(
+                              title: "Channel",
+                              icon: Icons.widgets_outlined,
+                              count: 2,
+                            ),
+                            ActivityWidget(
+                              title: "Thread",
+                              icon: Icons.bubble_chart_sharp,
+                              count: 2,
+                            ),
+                            ActivityWidget(
+                              title: "Calls",
+                              icon: Icons.phone_callback_rounded,
+                              count: 2,
+                              isCall: true,
+                            ),
+                          ],
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Stack(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Tasks",
-                                    style: GoogleFonts.arimo(
-                                      color: AppConstant.darkBlueColor,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                      ),
+                      SizedBox(height: 20),
+                      SizedBox(
+                        height: MediaQuery.sizeOf(context).height * 0.2,
+                        width: MediaQuery.sizeOf(context).width,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.sizeOf(context).width * 0.45,
+                              child: DashedBorderContainer(
+                                borderRadius: 16,
+                                color: AppConstant.blueColor,
+                                strokeWidth: 2,
+                                child: ColoredBox(
+                                  color: AppConstant.lightBlueColor!.withValues(
+                                    alpha: 0.2,
                                   ),
-                                  SizedBox(height: 10),
-                                  TaskCheckbox(
-                                    label: "Ux Audit",
-                                    isDone: false,
-                                    onChange: (val) {},
-                                  ),
-                                  TaskCheckbox(
-                                    label: "WireFrames",
-                                    isDone: false,
-                                    onChange: (val) {},
-                                  ),
-                                  TaskCheckbox(
-                                    label: "Hi-Fi",
-                                    isDone: false,
-                                    onChange: (val) {},
-                                  ),
-                                ],
-                              ),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Card(
-                                  elevation: 2,
-                                  shape: CircleBorder(),
-                                  shadowColor: AppConstant.lightBlueColor,
-                                  child: Container(
-                                    // height: 20,
-                                    // width: 20,
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: AppConstant.whiteColor,
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: AppConstant.darkBlueColor,
-                                      size: 20,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Stack(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "Tasks",
+                                              style: GoogleFonts.arimo(
+                                                color:
+                                                    AppConstant.darkBlueColor,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            SizedBox(height: 10),
+                                            TaskCheckbox(
+                                              label: "Ux Audit",
+                                              isDone: false,
+                                              onChange: (val) {},
+                                            ),
+                                            TaskCheckbox(
+                                              label: "WireFrames",
+                                              isDone: false,
+                                              onChange: (val) {},
+                                            ),
+                                            TaskCheckbox(
+                                              label: "Hi-Fi",
+                                              isDone: false,
+                                              onChange: (val) {},
+                                            ),
+                                          ],
+                                        ),
+                                        Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: Card(
+                                            elevation: 2,
+                                            shape: CircleBorder(),
+                                            shadowColor:
+                                                AppConstant.lightBlueColor,
+                                            child: Container(
+                                              // height: 20,
+                                              // width: 20,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppConstant.whiteColor,
+                                              ),
+                                              child: Icon(
+                                                Icons.add,
+                                                color:
+                                                    AppConstant.darkBlueColor,
+                                                size: 20,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
+                              ),
+                            ),
+
+                            SizedBox(
+                              width: MediaQuery.sizeOf(context).width * 0.45,
+                              child: DashedBorderContainer(
+                                borderRadius: 16,
+                                color: AppConstant.darkYellowColor!,
+                                strokeWidth: 2,
+                                child: ColoredBox(
+                                  color: AppConstant.lightYellowColor!
+                                      .withValues(alpha: 0.2),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(12.0),
+                                    child: Stack(
+                                      children: [
+                                        Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              "Notes",
+                                              style: GoogleFonts.arimo(
+                                                color:
+                                                    AppConstant.darkYellowColor,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
+                                            SizedBox(height: 10),
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceAround,
+                                              children: [
+                                                NotesWidget(label: "Design"),
+                                                NotesWidget(label: "Finance"),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        Align(
+                                          alignment: Alignment.bottomRight,
+                                          child: Card(
+                                            elevation: 2,
+                                            shape: CircleBorder(),
+                                            shadowColor:
+                                                AppConstant.lightYellowColor,
+                                            child: Container(
+                                              // height: 20,
+                                              // width: 20,
+                                              padding: EdgeInsets.all(10),
+                                              decoration: BoxDecoration(
+                                                shape: BoxShape.circle,
+                                                color: AppConstant.whiteColor,
+                                              ),
+                                              child: Icon(
+                                                Icons.add,
+                                                color:
+                                                    AppConstant.darkYellowColor,
+                                                size: 20,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      SizedBox(height: 20),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: AppConstant.greyColor,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                            left: 8.0,
+                            right: 8,
+                            top: 8,
+                            bottom: 6,
+                          ),
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(
+                                    Icons.bubble_chart_sharp,
+                                    size: 18,
+                                    color: AppConstant.blackColor,
+                                  ),
+                                  SizedBox(width: 5),
+                                  Text(
+                                    "Latest messages",
+                                    style: GoogleFonts.arimo(
+                                      color: AppConstant.blackColor,
+                                      fontSize: 10,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: 3,
+                                itemBuilder: (context, index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.only(top: 8.0),
+                                    child: LatestMessageWidget(
+                                      name: "Alex Rivera",
+                                      msg:
+                                          "Design updates pushed, take a look!",
+                                      time: "9:00 AM",
+                                      count: 4,
+                                    ),
+                                  );
+                                },
                               ),
                             ],
                           ),
                         ),
                       ),
-                    ),
+                      SizedBox(height: 20),
+                    ],
                   ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            color: AppConstant.whiteColor,
+            height: MediaQuery.sizeOf(context).height * 0.075,
+            width: MediaQuery.sizeOf(context).width,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Divider(thickness: 3, height: 2, color: AppConstant.greyColor),
 
-                  SizedBox(
-                    width: MediaQuery.sizeOf(context).width * 0.45,
-                    child: DashedBorderContainer(
-                      borderRadius: 16,
-                      color: AppConstant.darkYellowColor!,
-                      strokeWidth: 2,
-                      child: ColoredBox(
-                        color: AppConstant.lightYellowColor!.withValues(
-                          alpha: 0.2,
+                Padding(
+                  padding: const EdgeInsets.only(left: 6, right: 6, top: 8.0),
+                  child: TextField(
+                    controller: _searchController,
+                    cursorColor: AppConstant.blackColor,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: AppConstant.greyColor,
+                      hintText: "Jump to or search",
+                      hintStyle: GoogleFonts.roboto(
+                        fontSize: 13,
+                        fontWeight: FontWeight.w400,
+                        color: AppConstant.darkGreyColor,
+                      ),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        size: 18,
+                        color: AppConstant.darkGreyColor,
+                      ),
+                      suffixIcon: _searchController.text.isNotEmpty
+                          ? IconButton(
+                              icon: const Icon(Icons.clear),
+                              onPressed: () {
+                                _searchController.clear();
+                              },
+                            )
+                          : null,
+                      border: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(12),
+                        ), // Stadium shape
+                        borderSide: BorderSide.none, // Removes outline
+                      ),
+                      enabledBorder: const OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(18)),
+                        borderSide: BorderSide.none,
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: const BorderRadius.all(
+                          Radius.circular(18),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Stack(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Notes",
-                                    style: GoogleFonts.arimo(
-                                      color: AppConstant.darkYellowColor,
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  SizedBox(height: 10),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      NotesWidget(label: "Design"),
-                                      NotesWidget(label: "Finance"),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Align(
-                                alignment: Alignment.bottomRight,
-                                child: Card(
-                                  elevation: 2,
-                                  shape: CircleBorder(),
-                                  shadowColor: AppConstant.lightYellowColor,
-                                  child: Container(
-                                    // height: 20,
-                                    // width: 20,
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      color: AppConstant.whiteColor,
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: AppConstant.darkYellowColor,
-                                      size: 20,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        borderSide: BorderSide.none,
+
+                        // borderSide: BorderSide(
+                        //   color: AppConstant.greyColor,
+                        //   width: 1.5,
+                        // ),
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        vertical: 14.0,
                       ),
                     ),
+                    onChanged: (query) {},
                   ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: AppConstant.greyColor,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 8.0,
-                  right: 8,
-                  top: 8,
-                  bottom: 6,
                 ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.bubble_chart_sharp,
-                          size: 18,
-                          color: AppConstant.blackColor,
-                        ),
-                        SizedBox(width: 5),
-                        Text(
-                          "Latest messages",
-                          style: GoogleFonts.arimo(
-                            color: AppConstant.blackColor,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                    ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: LatestMessageWidget(
-                            name: "Alex Rivera",
-                            msg: "Design updates pushed, take a look!",
-                            time: "9:00 AM",
-                            count: 4,
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-              ),
+              ],
             ),
-            SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 8.0),
-              child: TextField(
-                controller: _searchController,
-                cursorColor: AppConstant.greyColor,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: AppConstant.greyColor,
-                  hintText: "Jump to or search",
-                  hintStyle: GoogleFonts.roboto(
-                    fontSize: 13,
-                    fontWeight: FontWeight.w400,
-                    color: AppConstant.darkGreyColor,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.search,
-                    size: 18,
-                    color: AppConstant.darkGreyColor,
-                  ),
-                  suffixIcon: _searchController.text.isNotEmpty
-                      ? IconButton(
-                          icon: const Icon(Icons.clear),
-                          onPressed: () {
-                            _searchController.clear();
-                          },
-                        )
-                      : null,
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12),
-                    ), // Stadium shape
-                    borderSide: BorderSide.none, // Removes outline
-                  ),
-                  enabledBorder: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(18)),
-                    borderSide: BorderSide.none,
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: const BorderRadius.all(Radius.circular(18)),
-                    borderSide: BorderSide.none,
-
-                    // borderSide: BorderSide(
-                    //   color: AppConstant.greyColor,
-                    //   width: 1.5,
-                    // ),
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 14.0),
-                ),
-                onChanged: (query) {},
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
