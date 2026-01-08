@@ -101,6 +101,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(10),
                 color: AppConstant.skinColor,
               ),
+              child: SizedBox(
+                height: 20,
+                width: 20,
+                child: Image.asset(AppConstant.boyImage),
+              ),
             ),
           ),
         ],
@@ -357,10 +362,10 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Container(
             color: AppConstant.whiteColor,
-            height: MediaQuery.sizeOf(context).height * 0.075,
+            height: MediaQuery.sizeOf(context).height * 0.09,
             width: MediaQuery.sizeOf(context).width,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Divider(thickness: 3, height: 2, color: AppConstant.greyColor),

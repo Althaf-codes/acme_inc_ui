@@ -15,5 +15,7 @@ class AppConstant {
   static const Color darkPinkColor = Color(0xFFef2d67);
   static const Color blackColor = Colors.black;
   static const Color whiteColor = Colors.white;
-  static const Color skinColor = Color(0xFFE8BEAC);
+  static const Color skinColor = Color.fromARGB(255, 246, 217, 205);
+
+  static const String boyImage = "assets/images/boy.png";
 }

@@ -78,7 +78,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Acme Inc',
-      theme: ThemeData(scaffoldBackgroundColor: AppConstant.whiteColor),
+      theme: ThemeData(
+        scaffoldBackgroundColor: AppConstant.whiteColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppConstant.whiteColor,
+          surfaceTintColor: Colors.transparent,
+          elevation: 0,
+        ),
+      ),
       home: MainScreen(),
     );
   }

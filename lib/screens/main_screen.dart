@@ -1,3 +1,4 @@
+import 'package:acme_inc/screens/activity/activity_screen.dart';
 import 'package:acme_inc/screens/home/home_screen.dart';
 import 'package:acme_inc/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -12,25 +13,29 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
+  int _currentIndex = 3;
 
   final List<Widget> _screens = [
     HomeScreen(),
     HomeScreen(),
     HomeScreen(),
-    HomeScreen(),
+    ActivityScreen(),
     HomeScreen(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _screens[_currentIndex],
-      // body: HomeScreen(),
+      body: AnimatedSwitcher(
+        duration: const Duration(milliseconds: 300),
+        switchInCurve: Curves.easeOut,
+        switchOutCurve: Curves.easeIn,
+        child: _screens[_currentIndex],
+      ),
       bottomNavigationBar: Container(
-        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         padding: const EdgeInsets.only(left: 14, right: 14),
-        color: AppConstant.pinkColor,
+        color: AppConstant.whiteColor,
         height: 50,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

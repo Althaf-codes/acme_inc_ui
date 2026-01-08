@@ -32,16 +32,27 @@ class LatestMessageWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             color: AppConstant.skinColor,
           ),
-        ),
-        title: Text(
-          name,
-          style: GoogleFonts.arimo(
-            fontSize: 12,
-            fontWeight: FontWeight.w700,
-            color: AppConstant.blackColor,
+          child: SizedBox(
+            height: 20,
+            width: 20,
+            child: Image.asset(AppConstant.boyImage),
           ),
-          maxLines: 1,
-          overflow: TextOverflow.ellipsis,
+        ),
+        title: Row(
+          children: [
+            Text(
+              name,
+              style: GoogleFonts.arimo(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                color: AppConstant.blackColor,
+              ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            SizedBox(width: 5),
+            CircleAvatar(radius: 3, backgroundColor: Colors.teal),
+          ],
         ),
         subtitle: Text(
           msg,
