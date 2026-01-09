@@ -1,5 +1,6 @@
 import 'package:acme_inc/screens/activity/activity_screen.dart';
 import 'package:acme_inc/screens/chat/chat_screen.dart';
+import 'package:acme_inc/screens/chat/message_screen.dart';
 import 'package:acme_inc/screens/home/home_screen.dart';
 import 'package:acme_inc/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   final List<Widget> _screens = [
     HomeScreen(),
     ChatScreen(),
+    // MessageScreen(),
     HomeScreen(),
     ActivityScreen(),
     HomeScreen(),

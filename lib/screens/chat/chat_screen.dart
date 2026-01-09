@@ -1,5 +1,6 @@
 import 'package:acme_inc/common/widgets/icon_text.dart';
 import 'package:acme_inc/common/widgets/latest_message_widget.dart';
+import 'package:acme_inc/screens/chat/message_screen.dart';
 import 'package:acme_inc/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -188,14 +189,26 @@ class _ChatScreenState extends State<ChatScreen> {
                                 shrinkWrap: true,
                                 itemCount: 2,
                                 itemBuilder: (context, index) {
-                                  return Padding(
-                                    padding: const EdgeInsets.only(top: 8.0),
-                                    child: LatestMessageWidget(
-                                      name: "Alex Rivera",
-                                      msg:
-                                          "Design updates pushed, take a look!",
-                                      time: "9:00 AM",
-                                      count: 4,
+                                  return GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) {
+                                            return MessageScreen();
+                                          },
+                                        ),
+                                      );
+                                    },
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(top: 8.0),
+                                      child: LatestMessageWidget(
+                                        name: "Alex Rivera",
+                                        msg:
+                                            "Design updates pushed, take a look!",
+                                        time: "9:00 AM",
+                                        count: 4,
+                                      ),
                                     ),
                                   );
                                 },
