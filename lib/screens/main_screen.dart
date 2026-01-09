@@ -1,6 +1,5 @@
 import 'package:acme_inc/screens/activity/activity_screen.dart';
 import 'package:acme_inc/screens/chat/chat_screen.dart';
-import 'package:acme_inc/screens/chat/message_screen.dart';
 import 'package:acme_inc/screens/home/home_screen.dart';
 import 'package:acme_inc/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -15,26 +14,21 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
   final List<Widget> _screens = [
     HomeScreen(),
     ChatScreen(),
     // MessageScreen(),
-    HomeScreen(),
+    Scaffold(),
     ActivityScreen(),
-    HomeScreen(),
+    Scaffold(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        switchInCurve: Curves.easeOut,
-        switchOutCurve: Curves.easeIn,
-        child: _screens[_currentIndex],
-      ),
+      body: IndexedStack(index: _currentIndex, children: _screens),
       bottomNavigationBar: Container(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
         padding: const EdgeInsets.only(left: 14, right: 14),
@@ -78,58 +72,6 @@ class _MainScreenState extends State<MainScreen> {
                         ],
                       )
                     : _navItem(i),
-
-                //  i == 2
-                //     ? Column(
-                //         children: [
-                //           SizedBox(height: 8),
-                //           Container(
-                //             alignment: Alignment.center,
-                //             height: 30,
-                //             width: 60,
-                //             decoration: BoxDecoration(
-                //               color: AppConstant.blackColor,
-                //               borderRadius: BorderRadius.circular(25),
-                //             ),
-                //             child: Icon(
-                //               Icons.add,
-                //               color: AppConstant.whiteColor,
-                //               size: 20,
-                //             ),
-                //           ),
-                //           SizedBox(height: 10),
-                //         ],
-                //       )
-                //     : Column(
-                //         mainAxisAlignment: MainAxisAlignment.center,
-                //         children: [
-                //           _currentIndex == i
-                //               ? Icon(
-                //                   _getActiveIcon(i),
-                //                   size: 18,
-                //                   color: AppConstant.blackColor,
-                //                 )
-                //               : Icon(
-                //                   _getIcon(i),
-                //                   size: 18,
-                //                   color: AppConstant.darkGreyColor,
-                //                 ),
-
-                //           SizedBox(height: 3),
-                //           Text(
-                //             _getLabel(i),
-                //             style: GoogleFonts.arimo(
-                //               fontSize: 10,
-                //               fontWeight: i == _currentIndex
-                //                   ? FontWeight.w600
-                //                   : FontWeight.w400,
-                //               color: i == _currentIndex
-                //                   ? AppConstant.blackColor
-                //                   : AppConstant.darkGreyColor,
-                //             ),
-                //           ),
-                //         ],
-                //       ),
               ),
           ],
         ),
@@ -224,3 +166,56 @@ class _MainScreenState extends State<MainScreen> {
     }
   }
 }
+
+
+   //  i == 2
+                //     ? Column(
+                //         children: [
+                //           SizedBox(height: 8),
+                //           Container(
+                //             alignment: Alignment.center,
+                //             height: 30,
+                //             width: 60,
+                //             decoration: BoxDecoration(
+                //               color: AppConstant.blackColor,
+                //               borderRadius: BorderRadius.circular(25),
+                //             ),
+                //             child: Icon(
+                //               Icons.add,
+                //               color: AppConstant.whiteColor,
+                //               size: 20,
+                //             ),
+                //           ),
+                //           SizedBox(height: 10),
+                //         ],
+                //       )
+                //     : Column(
+                //         mainAxisAlignment: MainAxisAlignment.center,
+                //         children: [
+                //           _currentIndex == i
+                //               ? Icon(
+                //                   _getActiveIcon(i),
+                //                   size: 18,
+                //                   color: AppConstant.blackColor,
+                //                 )
+                //               : Icon(
+                //                   _getIcon(i),
+                //                   size: 18,
+                //                   color: AppConstant.darkGreyColor,
+                //                 ),
+
+                //           SizedBox(height: 3),
+                //           Text(
+                //             _getLabel(i),
+                //             style: GoogleFonts.arimo(
+                //               fontSize: 10,
+                //               fontWeight: i == _currentIndex
+                //                   ? FontWeight.w600
+                //                   : FontWeight.w400,
+                //               color: i == _currentIndex
+                //                   ? AppConstant.blackColor
+                //                   : AppConstant.darkGreyColor,
+                //             ),
+                //           ),
+                //         ],
+                //       ),

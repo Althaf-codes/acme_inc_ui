@@ -2,8 +2,12 @@ import 'package:acme_inc/screens/main_screen.dart';
 import 'package:acme_inc/utils/constant.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await GoogleFonts.pendingFonts([GoogleFonts.arimo()]);
   runApp(
     DevicePreview(
       backgroundColor: Colors.black, // const Color.fromARGB(255, 1, 61, 38),
@@ -51,10 +55,10 @@ void main() {
         Devices.android.samsungGalaxyNote20Ultra, // Premium
         Devices.android.onePlus8Pro, // Different aspect ratio
         Devices.android.sonyXperia1II, // Tall screen
-        Devices.android.smallPhone,
+        // Devices.android.smallPhone,
 
         // Popular iOS Devices
-        Devices.ios.iPhoneSE, // Small screen
+        // Devices.ios.iPhoneSE, // Small screen
         Devices.ios.iPhone12, // Standard size
         Devices.ios.iPhone12Mini, // Compact
         Devices.ios.iPhone12ProMax, // Large
